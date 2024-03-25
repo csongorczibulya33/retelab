@@ -13,17 +13,18 @@ public class TrainControllerImpl implements TrainController {
 	{
 		thread = new Thread()
 		{
+			@Override
 			public void run()
 			{
 				thread.run();
 				try
 				{
 					followSpeed();
-					thread.sleep(1000);
+					Thread.sleep(1000);
 				}
 				catch (InterruptedException e)
 				{
-					e.printStackTrace();
+					Thread.currentThread().interrupt();
 				}
 			}
 		};
